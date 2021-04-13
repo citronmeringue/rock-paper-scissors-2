@@ -5,17 +5,40 @@ function computerPlay(){
 
 var playerScore = 0;
 var computerScore = 0;
+var imagePlayer = document.getElementById('img-player');
+var imageComputer = document.getElementById('img-computer');
 
 function playRound(playerSelection){
-    document.querySelector('#text').textContent =  "";
+    //document.querySelector('#text').textContent =  "";
     const computerSelection =  computerPlay().toLowerCase();
 
+    updateScore(playerSelection,computerSelection)
+
+    imageUpdate(playerSelection,imagePlayer)
+    imageUpdate(computerSelection, imageComputer)
+
+    document.getElementById('score-player').innerHTML =" Player : " + playerScore
+    document.getElementById('score-computer').innerHTML = "Computer : " + computerScore
+    checkWin(playerScore, computerScore)
+
+}
+
+function imageUpdate(selection, matchingImage){
+    if (selection === "paper"){
+        matchingImage.src = '../images/paper.png'
+    }else if (selection === "rock"){
+        matchingImage.src = '../images/rock.png'
+    }else if (selection === "scissors"){
+        matchingImage.src = '../images/scissors.png'
+    }
+}
+
+function updateScore(playerSelection, computerSelection){
     if(playerSelection == computerSelection){
-        //console.log("Draw, Redo round");
         document.querySelector('#text').textContent = "Draw ! Try again please !";
         return;
     }else{
-
+        document.querySelector('#text').innerHTML =  "";
         if(playerSelection == "rock"){
             if(computerSelection == "paper"){
                 computerScore = computerScore + 1;
@@ -35,28 +58,36 @@ function playRound(playerSelection){
                 playerScore = playerScore + 1;
             } else if(computerSelection == "rock"){
                 computerScore = computerScore + 1;
-
             } 
         }
     }
-  
-    document.getElementById('result').textContent = "Computer score : "+ computerScore + " Player score : "+ playerScore;
+}
 
+function checkWin(playerScore, computerScore){
     if(playerScore === 5){
-        document.querySelector('#result').textContent = "Congrats ! You won !";
-
+        document.querySelector('#text').textContent = "Congrats ! You won !";
+        playerScore = 0;
+        computerScore = 0;
+        Rock.removeEventListener('click', game)
+        Paper.removeEventListener('click', game)
+        Scissors.removeEventListener('click', game)
     } else if (computerScore === 5){
-        document.querySelector('#result').textContent = "Sorry ! Computer won !";    
-
+        document.querySelector('#text').textContent = "Sorry ! Computer won !";    
+        playerScore = 0;
+        computerScore = 0;
+        Rock.removeEventListener('click', game)
+        Paper.removeEventListener('click', game)
+        Scissors.removeEventListener('click', game)
     }
+
 }
-
-
 function game(){
-    const playerSelection = this.id.toLowerCase();
+        const playerSelection = this.id.toLowerCase();
         playRound(playerSelection);
-
 }
+
+
+
 
 Rock.addEventListener('click', game);
 Paper.addEventListener('click', game);

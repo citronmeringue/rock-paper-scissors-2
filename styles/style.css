@@ -1,7 +1,61 @@
+/*html{
+    font-size : 70%;
+}*/
+ body{
+    height: 100%;
+
+}
 #container{
     border : solid;
+    height : 80%;
+    width: 100%;
+    /*border-color: crimson;*/
 }
 
+.status-contain{
+    text-align: center;
+    height: 20%;
+}
 #options{
     text-align: center;
+    /*height: 50%;
+    border-style: dotted;*/
+}
+
+#display{
+   /* border-style: dashed;
+    border-color: chartreuse;*/
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+.img-contain{
+    display: flex;
+    justify-content: space-around;
+    height: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    /*border-style: ridge;
+    border-color: blueviolet;*/
+}
+
+#player-container{
+   /* border-style: solid;*/
+    width : 20%;
+}
+
+#computer-container{
+   /* border-style: solid;*/
+    width : 20%;
+}
+
+.title{
+    text-align: center;
+}
+
+
+@media(max_width: 550px){
+    html{
+        font-size : 40%;
+    }
 }

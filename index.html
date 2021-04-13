@@ -4,20 +4,31 @@
         <link href="styles/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Let's Play Rock, Paper, Scissors ! </h1>
         <div id="container">
+        <h1 class="title">Let's Play Rock, Paper, Scissors ! </h1>
 
-        <div id="options">    
-        <button id="Rock"><img src="/rock-paper-scissors-2/images/rock.png" alt="rock"/></button>
-        <button id="Paper"><img src="/rock-paper-scissors-2/images/paper.png" alt="paper"/></button>
-        <button id="Scissors"><img src="/rock-paper-scissors-2/images/scissors.png" alt="scissors"/></button>
-        </div>
+            <div id="display">
+                <div class="status-contain">
+                <h2 class="title">SCORES</h2>
+                <div id="text"></div>
+                </div>
+                <div class="img-contain">
+                    <div id="player-container">
+                    <div id="score-player">Player : 0</div>
+                        <img id="img-player" src=""/>
+                    </div>
+                    <div id="computer-container">
+                    <div id="score-computer">Computer : 0</div>
+                        <img id="img-computer" src=""/>
+                    </div>
+                </div>
+            </div>
 
-        <div id="display">
-            <div id="text"></div>
-            <div id="result"></div>
-            
-        </div>
+            <div id="options">    
+            <button id="Rock"><img src="images/rock.png" alt="rock"/></button>
+            <button id="Paper"><img src="images/paper.png" alt="paper"/></button>
+            <button id="Scissors"><img src="images/scissors.png" alt="scissors"/></button>
+            </div>
 
         </div>
         <script src="scripts/main.js"></script>
