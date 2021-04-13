@@ -25,11 +25,11 @@ function playRound(playerSelection){
 
 function imageUpdate(selection, matchingImage){
     if (selection === "paper"){
-        matchingImage.src = '../images/paper.png'
+        matchingImage.src = './images/paper.png'
     }else if (selection === "rock"){
-        matchingImage.src = '../images/rock.png'
+        matchingImage.src = './images/rock.png'
     }else if (selection === "scissors"){
-        matchingImage.src = '../images/scissors.png'
+        matchingImage.src = './images/scissors.png'
     }
 }
 
